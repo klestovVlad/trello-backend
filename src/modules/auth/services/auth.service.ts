@@ -6,7 +6,7 @@ import { UserRepository } from 'src/modules/users/service/user.repository';
 export class AuthService {
   constructor(private userRepository: UserRepository) {}
 
-  async validateUser(login: string, pass: string): Promise<User> {
+  async validateUser(login: string, pass: string): Promise<any> {
     const user: User = await this.userRepository.findByLogin(login);
 
     if (user && user.password === pass) {
